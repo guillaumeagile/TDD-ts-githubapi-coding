@@ -13,11 +13,18 @@ export default class ExampleController {
 
         router.get('/api',
             this.sayHello.bind(this))
+
+        router.get('/api/healthcheck',
+            this.healthcheck.bind(this))            
     }
 
     async sayHello(): Promise<string> {
         
         return Promise.resolve( this.businessLogic.sayHello())
+    }
+
+    async healthcheck(): Promise<string> {
+        return Promise.resolve( this.businessLogic.healthcheck())
     }
     
   

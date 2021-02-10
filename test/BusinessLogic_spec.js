@@ -15,5 +15,17 @@ describe('API Controler Exercise', () => {
             //ASSERT
             chai_1.expect(result).to.equal("Hello, friend2");
         });
+        it('calling /api/healthcheck  should return a different timestamp', () => {
+            ///ARRANGE the System Under Test*
+            var sut = new BusinessLogic_1.default();
+            //ACT
+            let result = sut.healthcheck();
+            let firstTimeStamp = result.time;
+            let secondTimeStamp = sut.healthcheck().time;
+            //ASSERT
+            chai_1.expect(result.name).to.equal("github-api");
+            chai_1.expect(result.version).to.equal("1.0");
+            chai_1.expect(firstTimeStamp < secondTimeStamp).to.be.true;
+        });
     });
 });

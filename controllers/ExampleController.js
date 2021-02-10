@@ -10,9 +10,13 @@ class ExampleController {
         this.router = router;
         this.businessLogic = new BusinessLogic_1.default();
         router.get('/api', this.sayHello.bind(this));
+        router.get('/api/healthcheck', this.healthcheck.bind(this));
     }
     async sayHello() {
         return Promise.resolve(this.businessLogic.sayHello());
+    }
+    async healthcheck() {
+        return Promise.resolve(this.businessLogic.healthcheck());
     }
 }
 exports.default = ExampleController;

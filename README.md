@@ -36,6 +36,7 @@ https://blog.logrocket.com/typescript-with-node-js-and-express/
 
 However I will try to continue the exercise with my TDD approach, but I will break the "Promises" approach, on puprpose; because I havent enough time to find a test library that could work with promises (chai-as-promised dont work here).
 
+See my comments in the multiple commits
 
 
 ## TASK-1001: Healthcheck endpoint

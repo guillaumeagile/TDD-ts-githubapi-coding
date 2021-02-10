@@ -44,6 +44,31 @@ See my comments in the multiple commits.
 done using the TDD approach.
 It allows me to find a better implementation for the timestamp rather than a Date().now which is not precise enough.
 
+## TASK-1002: Add a tiny easter egg
+
+I really didn't catch the point or the interest of this one, guys :/
 
 
+## TASK-1003: Register user
 
+je passe en francais là
+La série des déconvenues bat son plein
+La documentation de Fastify est très mal fichue et surtout repose sur du JS et non du TS
+Du coup, quand on veut fortement typer les informations recues par les Request, bah ca marche pas
+Soit ca compile pas, parce que tout est type unknown, donc le compilo, il t'envoie bouler (et il a raison!)
+Soit on caste en forcant le type d'une interface,  j'ai essayé comme indiqué dans le peu d'examples u'on trouve sur le net,  ca renvoie des chaine vide
+
+A ce stde là, je me suis vraiment focalisé sur mes TU
+Le reste c'est que de la plomberie, du wiring avec une lib de MVC  comme il y en a tant d'autres (et des meilleures je suis sur).
+C'est pas cet aspect là de la programmation qui m'interesse.
+
+
+Donc pour moi Fastify =  à fuir!   
+Programmation quick & dirty, communauté pas très active, mauvais codeurs en général; exemple en JS et pas en TS
+la doc est limitée dans le sens où elle donne des exemples simplistes et pas des vrais cas de la vie réelle
+difficile de trouver d'autres exemples valables à part la doc
+personne ne s'interesse aux tests unitaires;
+quand on veut faire des trucs propres (validation des schemas), il faut écrire des tonnes de code
+bref, vraiment c'est pas bon .
+
+Perso, je préfère ASP.Net Web API  (dotnet core) ou NancyFX en .Net

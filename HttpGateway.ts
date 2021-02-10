@@ -6,6 +6,13 @@ export default class HttpGateway  {
 
     constructor() {
         this.instance = fastify({logger: true});
+        /*
+        fastify.decorate('tokenGenerator', function () {
+            // call a real token generator
+          })
+          */   
+         // quelle blague!  les exemples donnés dans la doc officielle ne sont meme pas utilisable en TypeScript! :(
+        // https://www.fastify.io/docs/latest/Decorators/
     }
 
     get router() {

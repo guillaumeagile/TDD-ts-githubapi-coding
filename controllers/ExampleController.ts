@@ -16,6 +16,7 @@ export default class ExampleController {
     }
 
     async sayHello(): Promise<string> {
+        
         return Promise.resolve( this.businessLogic.sayHello())
     }
     

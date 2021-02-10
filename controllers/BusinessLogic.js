@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class DtoUser {
+class DomainUser {
     constructor(_userName, _token) {
         this._userName = _userName;
         this._token = _token;
@@ -28,7 +28,8 @@ class BusinessLogic {
     }
     registerUser(userName, pwd) {
         let token = this.tokenGen();
-        this.repositoryUsers.Write(new DtoUser(userName, token));
+        this.repositoryUsers.Write(new DomainUser(userName, token)); //clairement la responsabilité de créer (new) le DomainUser ne devrait même pas être dans la logique métier
+        // on devrait le faire dans un package qui a pour responsabilité de gérer les entités du domaine métier
         return {
             "status": "200",
             "body": {
@@ -44,7 +45,7 @@ class BusinessLogic {
             "time": process.hrtime()
         };
     }
-    ////of course; I could made my sayHello method in the business logic  async,  but for now I haven't found a compatible test framework with your setup :(
+    ////of course; I could have made this method as async, but I couldn't test is because I haven't found a compatible test library with your setup :(
     sayHello() {
         return 'Hello, friend2';
     }

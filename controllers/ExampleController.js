@@ -19,17 +19,16 @@ const ForUserRegistration = {
             }
         },
     }
-};
-// ca c'est vraiment du code non maintenable, qui vous pétera dans les doigts rapidement :(((((
+}; // ca c'est vraiment du code non maintenable, qui vous pétera dans les doigts rapidement :(((((
 class ExampleController {
     constructor(router) {
         this.router = router;
-        this.businessLogic = new BusinessLogic_1.default();
+        this.businessLogic = new BusinessLogic_1.default(); // should use a DI mechanism instead of create the instance right here , to avoid coupling
         router.get('/api', this.sayHello.bind(this));
         router.get('/api/healthcheck', () => { return Promise.resolve(this.businessLogic.healthcheck()); });
         router.post('/api/users/register/:params', ForUserRegistration, (request, reply) => {
             let params = request.params;
-            console.log(request.params);
+            //console.log(request.params)
             //return Promise.resolve( this.businessLogic.registerUser(params.username, params.password));}                    
             let result = this.businessLogic.registerUser(params.username, params.password);
             reply.code(result.code);

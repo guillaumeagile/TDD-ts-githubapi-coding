@@ -1,6 +1,5 @@
 import { FastifyInstance } from "fastify";
 import BusinessLogic from "./BusinessLogic";
-//const fastify = require('fastify');
 import * as fastify from 'fastify'
 
 interface ParamsForUserRegistration {
@@ -25,8 +24,7 @@ const ForUserRegistration: fastify.RouteShorthandOptions = {
             }
         },
     }
-}
-// ca c'est vraiment du code non maintenable, qui vous pétera dans les doigts rapidement :(((((
+}// ca c'est vraiment du code non maintenable, qui vous pétera dans les doigts rapidement :(((((
 
 
 export default class ExampleController {
@@ -36,7 +34,7 @@ export default class ExampleController {
 
     constructor(router: FastifyInstance) {
         this.router = router
-        this.businessLogic = new BusinessLogic();
+        this.businessLogic = new BusinessLogic();  // should use a DI mechanism instead of create the instance right here , to avoid coupling
 
         router.get('/api',
             this.sayHello.bind(this))
@@ -48,7 +46,7 @@ export default class ExampleController {
         router.post('/api/users/register/:params', ForUserRegistration,
             (request, reply) => {
                 let params = request.params as ParamsForUserRegistration
-                console.log(request.params)
+                //console.log(request.params)
                 //return Promise.resolve( this.businessLogic.registerUser(params.username, params.password));}                    
                 let result = this.businessLogic.registerUser(params.username, params.password)
                 reply.code(result.code)

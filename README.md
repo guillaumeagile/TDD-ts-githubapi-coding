@@ -71,4 +71,10 @@ personne ne s'interesse aux tests unitaires;
 quand on veut faire des trucs propres (validation des schemas), il faut écrire des tonnes de code
 bref, vraiment c'est pas bon .
 
-Perso, je préfère ASP.Net Web API  (dotnet core) ou NancyFX en .Net
+
+
+## TASK-1004: List registered users
+
+ok, c'est fait dans la business Logic mais avec un découplage de la base de données
+en fait, je ne cherche pas à utiliser un BD , mais une abstraction (un port/adapter dans une architecture hexagonale)
+pour cela j'ai déclaré une interface IStore<T>  et

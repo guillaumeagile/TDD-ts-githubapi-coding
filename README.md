@@ -31,14 +31,19 @@ This framework is not clean for me, and I wouldn't like to work with it.
 It encourages people to writte bad spaggheti code, all coupled.
 I suspect people to write very dirty things with it, with a lot of end to end testing and pain (and tears) when you put in production.
 
-I would recommend to use Express/Node.js instead.
-https://blog.logrocket.com/typescript-with-node-js-and-express/
+I would recommend to use NestJS / Express/ instead.
+https://docs.nestjs.com/
 
 However I will try to continue the exercise with my TDD approach, but I will break the "Promises" approach, on puprpose; because I havent enough time to find a test library that could work with promises (chai-as-promised dont work here).
 
-See my comments in the multiple commits
+See my comments in the multiple commits.
 
 
 ## TASK-1001: Healthcheck endpoint
+
+done using the TDD approach.
+It allows me to find a better implementation for the timestamp rather than a Date().now which is not precise enough.
+
+
 
 

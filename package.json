@@ -7,7 +7,8 @@
     "clean": "tsc --build --clean",
     "build": "tsc -p tsconfig.build.json",
     "start": "ts-node main.ts",
-    "test": "./node_modules/.bin/mocha -w -c --require ./test/init.js"
+    "test": "./node_modules/.bin/mocha -w -c --require ./test/init.js",
+    "tap": "tap --reporter=list --watch"
   },
   "engines": {
     "node": "12.x",
@@ -15,19 +16,23 @@
   },
   "author": "Appstud",
   "dependencies": {
-    "axios": "^0.20.0",
-    "fastify": "^3.2.1",
-    "isomorphic-fetch": "^3.0.0"
+    "axios": "^0.21.1",
+    "chai": "^4.2.0",
+    "fastify": "^3.11.0",
+    "isomorphic-fetch": "^3.0.0",
+    "tap": "^14.11.0"
   },
   "devDependencies": {
     "@types/chai": "^3.5.2",
     "@types/core-js": "^0.9.39",
+    "@types/es6-shim": "^0.31.41",
     "@types/jasmine": "^2.2.33",
-    "@types/mocha": "^2.2.48",
-    "@types/node": "^14.6.0",
-    "chai": "^3.5.0",
+    "@types/jest": "^26.0.17",
+    "@types/mocha": "^8.0.4",
+    "@types/node": "^14.14.25",
+    "chai": "^4.2.0",
     "chain": "^0.1.3",
-    "mocha": "^3.5.3",
+    "mocha": "^8.2.1",
     "ts-mocha": "^8.0.0",
     "ts-node": "^8.9.0",
     "typescript": "^4.0.5"
